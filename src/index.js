@@ -1,10 +1,17 @@
+// External Dependency
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { I18nextProvider } from 'react-i18next';
+
+// Internal Dependency
+import Main from './pages/main'
 import './index.css';
-import Main from './pages/main';
 import registerServiceWorker from './registerServiceWorker';
-import './common/langs/i18n';
+import i18n from "./common/langs/i18n";
 
 
-ReactDOM.render(<Main />, document.getElementById('root'));
+
+
+// append app to dom
+ReactDOM.render(<I18nextProvider i18n={ i18n }><Main /></I18nextProvider>, document.getElementById('root'));
 registerServiceWorker();
